@@ -1,0 +1,229 @@
+1)package main
+ 
+import "fmt"
+ 
+var employee = map[string]int{"Mallisetty": 10, "jhansi": 20}
+ 
+func main() {
+	fmt.Println(employee)
+}
+
+
+
+map[Mallisetty:10 jhansi:20]
+
+Program exited.
+
+2)package main
+ 
+import "fmt"
+ 
+func main() {
+	var employee = map[string]int{}
+	fmt.Println(employee)        
+	fmt.Printf("%T\n", employee) 
+}
+
+map[]
+map[string]int
+
+Program exited.
+
+3)package main
+ 
+import "fmt"
+ 
+func main() {
+	var employee = make(map[string]int)
+	employee["jhansi"] = 10
+	employee["mallisetty"] = 20
+	fmt.Println(employee)
+ 
+	employeeList := make(map[string]int)
+	employeeList["jhansi"] = 10
+	employeeList["mallisetty"] = 20
+	fmt.Println(employeeList)
+}
+
+
+map[jhansi:10 mallisetty:20]
+map[jhansi:10 mallisetty:20]
+
+Program exited.
+
+
+
+4)package main
+ 
+import "fmt"
+ 
+func main() {
+	var employee = make(map[string]int)
+	employee["jhansi"] = 10
+	employee["Suji"] = 20
+ 
+	
+	employeeList := make(map[string]int)
+ 
+	fmt.Println(len(employee))     
+	fmt.Println(len(employeeList)) 
+}
+
+
+2
+0
+
+Program exited.
+
+5)package main
+ 
+import "fmt"
+ 
+func main() {
+	var employee = map[string]int{"suji": 10, "jhansi": 20}
+ 
+	fmt.Println(employee["Mark"])
+}
+
+0
+
+Program exited.
+
+6)package main
+ 
+import "fmt"
+ 
+func main() {
+	var employee = map[string]int{"navya": 10, "madhavi": 20}
+	fmt.Println(employee) 
+ 
+	employee["ravi"] = 30 
+	employee["navi"] = 40
+ 
+	fmt.Println(employee)
+}
+map[madhavi:20 navya:10]
+map[madhavi:20 navi:40 navya:10 ravi:30]
+
+Program exited.
+
+7)package main
+ 
+import "fmt"
+ 
+func main() {
+	var employee = map[string]int{"jhansi": 10, "Suji": 20}
+	fmt.Println(employee) 
+ 
+	employee["jhansi"] = 50 
+	fmt.Println(employee)
+}
+
+map[Suji:20 jhansi:10]
+map[Suji:20 jhansi:50]
+
+Program exited.
+
+8)package main
+ 
+import "fmt"
+ 
+func main() {
+	var employee = make(map[string]int)
+	employee["jhansi"] = 10
+	employee["Suji"] = 20
+	employee["navya"] = 30
+	employee["likhi"] = 40
+ 
+	fmt.Println(employee)
+ 
+	delete(employee, "likhi")
+	fmt.Println(employee)
+}
+
+
+map[Suji:20 jhansi:10 likhi:40 navya:30]
+map[Suji:20 jhansi:10 navya:30]
+
+Program exited.
+
+
+
+9)package main
+
+import "fmt"
+
+func main() {
+   var countryCapitalMap map[string]string
+   
+   countryCapitalMap = make(map[string]string)
+   
+  
+   countryCapitalMap["France"] = "Paris"
+   countryCapitalMap["Italy"] = "Rome"
+   countryCapitalMap["Japan"] = "Tokyo"
+   countryCapitalMap["India"] = "New Delhi"
+   
+   
+   for country := range countryCapitalMap {
+      fmt.Println("Capital of",country,"is",countryCapitalMap[country])
+   }
+   
+   
+   capital, ok := countryCapitalMap["United States"]
+   
+   
+
+   if(ok){
+      fmt.Println("Capital of United States is", capital)  
+   } else {
+      fmt.Println("Capital of United States is not present") 
+   }
+
+Capital of India is New Delhi
+Capital of France is Paris
+Capital of Italy is Rome
+Capital of Japan is Tokyo
+Capital of United States is not present
+
+10)package main
+
+import "fmt"
+
+func main() {   
+   
+   countryCapitalMap := map[string] string {"France":"Paris","Italy":"Rome","Japan":"Tokyo","India":"New Delhi"}
+   
+   fmt.Println("Original map")   
+   
+   
+   for country := range countryCapitalMap {
+      fmt.Println("Capital of",country,"is",countryCapitalMap[country])
+   }
+   
+   
+   delete(countryCapitalMap,"France");
+   fmt.Println("Entry for France is deleted")  
+   
+   fmt.Println("Updated map")   
+   
+  
+   for country := range countryCapitalMap {
+      fmt.Println("Capital of",country,"is",countryCapitalMap[country])
+   }
+}
+
+
+Original Map
+Capital of France is Paris
+Capital of Italy is Rome
+Capital of Japan is Tokyo
+Capital of India is New Delhi
+Entry for France is deleted
+Updated Map
+Capital of India is New Delhi
+Capital of Italy is Rome
+Capital of Japan is Tokyo
+
+
+
